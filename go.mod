@@ -1,4 +1,4 @@
-module github.com/z810/glance
+module github.com/glanceapp/glance
 
 go 1.24.3
 
