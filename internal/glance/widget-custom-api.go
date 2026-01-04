@@ -2,10 +2,7 @@ package glance
 
 import (
 	"bytes"
-	"context"		"withMethod": func(method string, req *CustomAPIRequest) *CustomAPIRequest {
-			req.Method = method
-			return req
-		},
+	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
