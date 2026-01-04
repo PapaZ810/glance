@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/z810/glance/internal/glance"
+	"github.com/glanceapp/glance/internal/glance"
 )
 
 func main() {
