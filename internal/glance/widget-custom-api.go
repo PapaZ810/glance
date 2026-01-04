@@ -54,7 +54,7 @@ type customAPIWidget struct {
 func (widget *customAPIWidget) initialize() error {
 	widget.withTitle("Custom API").withCacheDuration(1 * time.Hour)
 
-	if err := widget.CustomAPIRequest.initialize(); err != nil {
+	if err := widget.CustomAPIRequest.initialize(); err != nil { 
 		return fmt.Errorf("initializing primary request: %v", err)
 	}
 
@@ -638,14 +638,14 @@ var customAPITemplateFuncs = func() template.FuncMap {
 			}
 			return out
 		},
-		"withMethod": func(method string, req *CustomAPIRequest) *CustomAPIRequest {
-			req.Method = method
-			return req
-		},
 		"newRequest": func(url string) *CustomAPIRequest {
 			return &CustomAPIRequest{
 				URL: url,
 			}
+		},
+		"withMethod": func(method string, req *CustomAPIRequest) *CustomAPIRequest {
+			req.Method = method
+			return req
 		},
 		"withHeader": func(key, value string, req *CustomAPIRequest) *CustomAPIRequest {
 			if req.Headers == nil {
