@@ -2,7 +2,10 @@ package glance
 
 import (
 	"bytes"
-	"context"
+	"context"		"withMethod": func(method string, req *CustomAPIRequest) *CustomAPIRequest {
+			req.Method = method
+			return req
+		},
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -634,6 +637,10 @@ var customAPITemplateFuncs = func() template.FuncMap {
 				}
 			}
 			return out
+		},
+		"withMethod": func(method string, req *CustomAPIRequest) *CustomAPIRequest {
+			req.Method = method
+			return req
 		},
 		"newRequest": func(url string) *CustomAPIRequest {
 			return &CustomAPIRequest{
